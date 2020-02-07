@@ -1,21 +1,29 @@
 package gormodel_test
 
 import (
+	"testing"
+
 	"github.com/ipfans/gormodel"
 )
 
-func Example() {
+func ExampleModel() {
 	type User struct {
 		gormodel.Model
 
 		Name string
 	}
+}
 
-	type UserRepository struct {
-		gormodel.Base
-	}
+type User struct {
+	gormodel.Model
 
-	type UserRepo interface{
-		gormodel.IBase
-	}
+	Name string
+}
+
+func iFunc(i gormodel.Actions) {
+
+}
+
+func TestBase(t *testing.T) {
+	iFunc(&gormodel.Base{})
 }
